@@ -1,3 +1,4 @@
+import 'package:ble_ota/ota_file.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -8,13 +9,11 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
-void main() async {
-  await WidgetsFlutterBinding.ensureInitialized();
-  await copyFileFromAssetsToCache(otaFilePath);
+void main() {
   runApp(const MyApp());
 }
-
-String otaFilePath = 'asset/bin/ImgPacketFile-d40f416a178a33658b3aced19feb1637.bin';
+String otaFileName = 'ImgPacketFile-d40f416a178a33658b3aced19feb1637.bin';
+String otaFileAssetPath = 'asset/bin/$otaFileName';
 Future<void> copyFileFromAssetsToCache(String assetPath) async {
   final ByteData data = await rootBundle.load(assetPath);
   final List<int> bytes = data.buffer.asUint8List();
@@ -24,6 +23,9 @@ Future<void> copyFileFromAssetsToCache(String assetPath) async {
   print('[copyFileFromAssetsToCache]filePath: $filePath');
 
   File file = File(filePath);
+  if (await file.exists()) {
+    return;
+  }
   await file.writeAsBytes(bytes, flush: true);
   print('[copyFileFromAssetsToCache]file: $file');
 }
@@ -67,6 +69,12 @@ class _MyAppState extends State<MyApp> {
     });
   }
   bool _isDfuInProgress = false;
+
+  Future<void> setFile(String fileName) async {
+    OtaFile otaFile = OtaFile(name: fileName);
+    await _bleOtaPlugin.setFile(otaFile);
+  }
+
   Future<void> startDfuProcess() async {
     _isDfuInProgress = await _bleOtaPlugin.startDfuProcess();
     if (_isDfuInProgress) {
@@ -89,6 +97,14 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Text('Running on: $_platformVersion\n'),
+              ElevatedButton(
+                onPressed: () => copyFileFromAssetsToCache(otaFileAssetPath),
+                child: const Text('Query File'),
+              ),
+              ElevatedButton(
+                onPressed: () => setFile(otaFileName),
+                child: const Text('Set File'),
+              ),
               if (_isDfuInProgress) const Text('DFU process in progress'),
               ElevatedButton(
                 onPressed: startDfuProcess,

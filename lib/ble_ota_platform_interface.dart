@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'ble_ota_method_channel.dart';
+import 'ota_file.dart';
 
 abstract class BleOtaPlatform extends PlatformInterface {
   /// Constructs a BleOtaPlatform.
@@ -25,6 +26,10 @@ abstract class BleOtaPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<void> setFile(OtaFile otaFile) {
+    throw UnimplementedError('setFile() has not been implemented.');
   }
 
   Future<bool> startDfuProcess() {

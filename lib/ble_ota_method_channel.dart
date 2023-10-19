@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'ble_ota_platform_interface.dart';
+import 'ota_file.dart';
 
 /// An implementation of [BleOtaPlatform] that uses method channels.
 class MethodChannelBleOta extends BleOtaPlatform {
@@ -11,8 +12,15 @@ class MethodChannelBleOta extends BleOtaPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future<void> setFile(OtaFile otaFile) async {
+    await methodChannel
+        .invokeMethod<String>('setFile', otaFile.toJson());
   }
 
   @override

@@ -19,9 +19,7 @@ package com.skaiwalk.ble_ota.function
 import android.Manifest
 import android.bluetooth.BluetoothDevice
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Bundle
 import android.text.TextUtils
 import androidx.core.app.ActivityCompat
 import com.realsil.sdk.core.bluetooth.GlobalGatt
@@ -39,8 +37,6 @@ import com.skaiwalk.ble_ota.settings.SettingsHelper
 import com.realsil.sdk.dfu.utils.ConnectParams
 import com.realsil.sdk.dfu.utils.DfuAdapter
 import com.realsil.sdk.dfu.utils.GattDfuAdapter
-import com.realsil.sdk.support.scanner.LeScannerActivity
-import com.realsil.sdk.support.scanner.ScannerActivity
 import com.skaiwalk.ble_ota.settings.AppSettingsHelper
 import java.util.*
 
@@ -119,8 +115,6 @@ class GattDfuModule : BaseBluetoothDfuModule<GattDfuAdapter>() {
     override fun refresh(forceLoad: Boolean) {
         try {
             refreshDeviceInfo()
-            mFilePath =
-                "/data/user/0/com.skaiwalk.ble_ota/cache/ImgPacketFile-d40f416a178a33658b3aced19feb1637.bin"
             refreshBinInfo(forceLoad)
 //            ZLogger.v("refresh mFilePath:$mFilePath")
             if (isOtaProcessing) {
@@ -216,8 +210,15 @@ class GattDfuModule : BaseBluetoothDfuModule<GattDfuAdapter>() {
         }
     }
 
-    fun onInit(activityContext: Context) {
+    fun setFileName(activityContext: Context, fileName: String) {
+        var packageName = context.packageName
+        mFilePath = "/data/user/0/${packageName}/cache/${fileName}"
+        ZLogger.v("[setFileName]mFilePath:$mFilePath")
+    }
+
+    fun initialize(activityContext: Context) {
         context = activityContext
+        setFileName(activityContext, "ImgPacketFile-d40f416a178a33658b3aced19feb1637")
 //        if (!isBLESupported()) {
 //            finish()
 //        }
