@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017-2022. Realtek Semiconductor Corporation.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <array name="connection_error_code">
+        <item>@array/connection_error_code_0</item>
+        <item>@array/connection_error_code_1</item>
+        <item>@array/connection_error_code_2</item>
+        <item>@array/connection_error_code_3</item>
+        <item>@array/connection_error_code_4</item>
+        <item>@array/connection_error_code_5</item>
+        <item>@array/connection_error_code_6</item>
+    </array>
+
+    <array name="connection_error_code_0">
+        <item>"0"</item>
+        <item>Establish connection failed</item>
+        <item>1. Remote User Terminated Connection(HCI_Disconnect, 0x0406)</item>
+    </array>
+    <array name="connection_error_code_1">
+        <item>"1"</item>
+        <item>GATT_DISCOVERY_FAIL</item>
+        <item>1. discovery gatt service failed</item>
+    </array>
+    <array name="connection_error_code_2">
+        <item>"2"</item>
+        <item>GET_SERVICE_FAIL</item>
+        <item>1. service not supported</item>
+    </array>
+    <array name="connection_error_code_3">
+        <item>"3"</item>
+        <item>OTA_SERVICE_LOSS</item>
+        <item>1. ota service loss</item>
+    </array>
+    <array name="connection_error_code_4">
+        <item>"4"</item>
+        <item>GET_CHARA_FAIL</item>
+        <item>1. get characteristic failed</item>
+    </array>
+    <array name="connection_error_code_5">
+        <item>"5"</item>
+        <item>READ_CHAR_ERROR</item>
+        <item>1. read characteristic failed</item>
+    </array>
+    <array name="connection_error_code_6">
+        <item>"6"</item>
+        <item>SPP_CONNECTION_FAIL</item>
+        <item>1. establish SPP connection failed</item>
+    </array>
+
+    <array name="error_code">
+        <item>@array/error_code_256</item>
+        <item>@array/error_code_257</item>
+        <item>@array/error_code_258</item>
+        <item>@array/error_code_259</item>
+        <item>@array/error_code_260</item>
+        <item>@array/error_code_261</item>
+        <item>@array/error_code_262</item>
+        <item>@array/error_code_263</item>
+        <item>@array/error_code_264</item>
+        <item>@array/error_code_265</item>
+        <item>@array/error_code_266</item>
+        <item>@array/error_code_267</item>
+        <item>@array/error_code_268</item>
+        <item>@array/error_code_269</item>
+        <item>@array/error_code_270</item>
+        <item>@array/error_code_271</item>
+        <item>@array/error_code_272</item>
+        <item>@array/error_code_273</item>
+        <item>@array/error_code_274</item>
+        <item>@array/error_code_275</item>
+        <item>@array/error_code_276</item>
+        <item>@array/error_code_277</item>
+        <item>@array/error_code_278</item>
+        <item>@array/error_code_279</item>
+        <item>@array/error_code_280</item>
+        <item>@array/error_code_281</item>
+        <item>@array/error_code_282</item>
+        <item>@array/error_code_283</item>
+        <item>@array/error_code_284</item>
+        <item>@array/error_code_285</item>
+        <item>@array/error_code_286</item>
+        <item>@array/error_code_287</item>
+        <item>@array/error_code_288</item>
+        <item>@array/error_code_514</item>
+        <item>@array/error_code_517</item>
+        <item>@array/error_code_520</item>
+        <item>@array/error_code_766</item>
+        <item>@array/error_code_767</item>
+        <item>@array/error_code_1027</item>
+        <item>@array/error_code_1028</item>
+        <item>@array/error_code_1031</item>
+        <item>@array/error_code_1037</item>
+        <item>@array/error_code_1153</item>
+        <item>@array/error_code_1157</item>
+        <item>@array/error_code_2110</item>
+        <item>@array/error_code_2177</item>
+        <item>@array/error_code_2181</item>
+        <item>@array/error_code_2303</item>
+        <item>@array/error_code_2305</item>
+        <item>@array/error_code_2048</item>
+        <item>@array/error_code_2056</item>
+        <item>@array/error_code_2067</item>
+        <item>@array/error_code_2088</item>
+        <item>@array/error_code_4097</item>
+        <item>@array/error_code_4112</item>
+        <item>@array/error_code_4113</item>
+        <item>@array/error_code_4114</item>
+        <item>@array/error_code_4128</item>
+    </array>
+
+
+    <array name="error_code_256">
+        <item>"256"</item>
+        <item>Can\’t connect the device enter OTA mode</item>
+        <item>1. Radio environment is extremely bad
+            \n2. Android connect BLE device with BR/EDR channel
+            \n3. Bluedroid exception
+        </item>
+    </array>
+    <array name="error_code_257">
+        <item>"257"</item>
+        <item>IO error of read file</item>
+        <item>1. I/O error, the probability is very low</item>
+    </array>
+    <array name="error_code_258">
+        <item>"258"</item>
+        <item>Launch the GATT search service failure</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_259">
+        <item>"259"</item>
+        <item>Invokes the Java synchronization lock exceptions</item>
+        <item>1. Java exception, the probability is very low</item>
+    </array>
+    <array name="error_code_260">
+        <item>"260"</item>
+        <item>Connect without any callback response</item>
+        <item>1. Probably other applications connection with the same device
+            \n2. Bluedroid exception, the probability is very low
+        </item>
+    </array>
+    <array name="error_code_261">
+        <item>"261"</item>
+        <item>Send command but no callback</item>
+        <item>1. Disconnect when send command
+            \n2. If is Android4.4 system, get the error when half in upgrade, may be Bluedroid have
+            GKI get buffer exception, please use the patch version up to 9377(The function of update
+            connection parameters is added), or use the mobile phone above Android5.0
+        </item>
+    </array>
+    <array name="error_code_262">
+        <item>"262"</item>
+        <item>Service mismatch</item>
+        <item>1. Connect error device, the probability is very low</item>
+    </array>
+    <array name="error_code_263">
+        <item>"263"</item>
+        <item>Characteristic mismatch</item>
+        <item>1. Connect error device, the probability is very low</item>
+    </array>
+    <array name="error_code_264">
+        <item>"264"</item>
+        <item>establish le connection failed</item>
+        <item>1. establish le connection failed</item>
+    </array>
+    <array name="error_code_265">
+        <item>"265"</item>
+        <item>0x0109--Can\’t scan the device</item>
+        <item>1. Radio environment is extremely bad\n
+            2. Sent to the command of “entering OTA mode”, but can\’t scan the device, the
+            possible reasons is the device are not yet enter the OTA mode\n
+            3. [BLE] Please check if the positioning function is enabled
+        </item>
+    </array>
+    <array name="error_code_266">
+        <item>"266"</item>
+        <item>Can\’t enable notification</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_267">
+        <item>"267"</item>
+        <item>write data error</item>
+        <item>1. operation failed</item>
+        <item>2. connection lost when send data</item>
+    </array>
+    <array name="error_code_268">
+        <item>"268"</item>
+        <item>Resend time exceed max</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_269">
+        <item>"269"</item>
+        <item>The battery is low</item>
+        <item>1. Remote device battery is low
+        </item>
+    </array>
+    <array name="error_code_270">
+        <item>"270"</item>
+        <item>Read bank info error</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_271">
+        <item>"271"</item>
+        <item>Read app info error</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_272">
+        <item>"272"</item>
+        <item>Read patch info error</item>
+        <item>1. Bluedroid exception, the probability is very low</item>
+    </array>
+    <array name="error_code_273">
+        <item>"273"</item>
+        <item>Read image version failed</item>
+        <item>1. Read image version failed with no callback</item>
+    </array>
+    <array name="error_code_274">
+        <item>"274"</item>
+        <item>User didn\’t avtive image update</item>
+        <item>1. Occur when user did\’t active the image update in silent OTA update</item>
+    </array>
+    <array name="error_code_275">
+        <item>"275"</item>
+        <item>Buffer Check retry times exceed to MAX value</item>
+        <item>1. Occur a lot of error 517</item>
+    </array>
+    <array name="error_code_276">
+        <item>"276"</item>
+        <item>Request mtu failed</item>
+        <item>1. Request mtu failed with no callback</item>
+    </array>
+    <array name="error_code_277">
+        <item>"277"</item>
+        <item>read remote mac addr failed</item>
+        <item>1. read remote mac addr failed</item>
+    </array>
+    <array name="error_code_278">
+        <item>"278"</item>
+        <item>Version Check failed</item>
+        <item>1. image app version lower than remote
+            \n2. image patch version lower than remote
+            \n3. image patch extension version lower than remote
+        </item>
+    </array>
+    <array name="error_code_279">
+        <item>"279"</item>
+        <item>send command failed</item>
+        <item>1. read characteristic failed
+        </item>
+    </array>
+    <array name="error_code_280">
+        <item>"280"</item>
+        <item>enter ota mode failed</item>
+        <item>1. send command failed
+        </item>
+    </array>
+    <array name="error_code_281">
+        <item>"281"</item>
+        <item>OTA Over SPP not supported</item>
+        <item>OTA Over SPP not supported
+        </item>
+    </array>
+    <array name="error_code_282">
+        <item>"282"</item>
+        <item>RWS OTA NOT READY</item>
+        <item>RWS OTA NOT READY
+        </item>
+    </array>
+    <array name="error_code_283">
+        <item>"283"</item>
+        <item>0x011B:role swap failed</item>
+        <item>role swap failed
+        </item>
+    </array>
+    <array name="error_code_284">
+        <item>"284"</item>
+        <item>enable buffer check failed</item>
+        <item>enable buffer check failed
+        </item>
+    </array>
+    <array name="error_code_285">
+        <item>"285"</item>
+        <item>pub keys conflict</item>
+        <item>pub keys conflict
+        </item>
+    </array>
+    <array name="error_code_286">
+        <item>"286"</item>
+        <item>0x011E: hand shake failed</item>
+        <item>hand shake failed
+        </item>
+    </array>
+    <array name="error_code_287">
+        <item>"287"</item>
+        <item>0x011F: Already be latest version</item>
+        <item>Already be latest version
+        </item>
+    </array>
+    <array name="error_code_288">
+        <item>"288"</item>
+        <item>0x0120(288): copy image failed</item>
+        <item>Copy image failed
+        </item>
+    </array>
+    <array name="error_code_514">
+        <item>"514"</item>
+        <item>0x0202: Invalid parameters</item>
+        <item>1. invalid parameters
+        </item>
+    </array>
+    <array name="error_code_517">
+        <item>"517"</item>
+        <item>CRC Check failed</item>
+        <item>1. crc check failed(Packet lost, recommend to slow down)
+            \n2. update connection params failed
+        </item>
+    </array>
+    <array name="error_code_520">
+        <item>"520"</item>
+        <item>0x0208, Flash erase error</item>
+        <item>1. Flash erase error
+        </item>
+    </array>
+    <array name="error_code_766">
+        <item>"766"</item>
+        <item>opcode response not supported</item>
+        <item>1. operation failed</item>
+        <item>2. opcode response not supported</item>
+    </array>
+    <array name="error_code_767">
+        <item>"767"</item>
+        <item>Didn\’t receive remote notification</item>
+        <item>1. AES Mismatch
+            \n2. May be the remote device have problems in config memory allocation
+        </item>
+    </array>
+    <array name="error_code_1027">
+        <item>"1027"</item>
+        <item>ERROR_WRITE_NOT_PERMIT</item>
+        <item>1. enable CCCD failed, please try to set
+            "getDfuConfig().addErrorAction(DfuConfig.ERROR_ACTION_REFRESH_DEVICE);"
+        </item>
+    </array>
+    <array name="error_code_1028">
+        <item>"1028"</item>
+        <item>GATT_INVALID_PDU</item>
+        <item>1. write command failed
+        </item>
+    </array>
+    <array name="error_code_1031">
+        <item>"1032"</item>
+        <item>GATT_INVALID_OFFSET</item>
+        <item>1. 发送命令失败
+        </item>
+    </array>
+    <array name="error_code_1037">
+        <item>"1037"</item>
+        <item>GATT_INVALID_ATTR_LEN</item>
+        <item>1. write command failed
+        </item>
+    </array>
+    <array name="error_code_1153">
+        <item>"1153"</item>
+        <item>0x0081-GATT_INTERNAL_ERROR</item>
+        <item>0x0081-GATT_INTERNAL_ERROR</item>
+    </array>
+    <array name="error_code_1157">
+        <item>"1157"</item>
+        <item>0x0485:GATT_ERROR</item>
+        <item>1. write command failed
+            \n2. [Controller] Connection Timeout
+        </item>
+    </array>
+    <array name="error_code_2048">
+        <item>"2048"</item>
+        <item>Connection disconnected</item>
+        <item>1. Gatt disconnection due to link disconnection exceptionally
+            \n2. SPP connection error
+        </item>
+    </array>
+
+    <!--GattError.GATT_CONN_TIMEOUT-->
+    <array name="error_code_2056">
+        <item>"2056"</item>
+        <item>GATT_CONN_TIMEOUT</item>
+        <item>1. Gatt disconnection due to connect timeout</item>
+    </array>
+    <array name="error_code_2067">
+        <item>"2067"</item>
+        <item>0x13-GATT_CONN_TERMINATE_PEER_USER</item>
+        <item>1. 0x13-GATT_CONN_TERMINATE_PEER_USER</item>
+    </array>
+    <array name="error_code_2088">
+        <item>"2088"</item>
+        <item>GATT_CONN_TIMEOUT</item>
+        <item>1.connection timeout
+        </item>
+    </array>
+    <array name="error_code_2110">
+        <item>"2110"</item>
+        <item>GATT_CONN_FAIL_ESTABLISH</item>
+        <item>1.connection fail to establish
+        </item>
+    </array>
+    <array name="error_code_2177">
+        <item>"2177"</item>
+        <item>GATT_INTERNAL_ERROR</item>
+        <item>establish connection failed</item>
+    </array>
+    <array name="error_code_2181">
+        <item>"2181"</item>
+        <item>GATT_ERROR</item>
+        <item>establish connection failed</item>
+    </array>
+    <array name="error_code_2303">
+        <item>"2303"</item>
+        <item>Out of range</item>
+        <item>1. Out of range</item>
+    </array>
+    <array name="error_code_2305">
+        <item>"2305"</item>
+        <item>Can\’t register Client_if</item>
+        <item>1. Client if had be registered over</item>
+    </array>
+
+    <array name="error_code_4097">
+        <item>"4097"</item>
+        <item>(0x1001),load image file failed</item>
+        <item>1. load image file failed</item>
+    </array>
+
+    <array name="error_code_4112">
+        <item>"4112"</item>
+        <item>Invalid Bluetooth Address</item>
+        <item>1. Address is invalid</item>
+    </array>
+    <array name="error_code_4113">
+        <item>"4113"</item>
+        <item>Secret key invalid</item>
+        <item>1. Secret key invalid</item>
+    </array>
+    <array name="error_code_4114">
+        <item>"4114"</item>
+        <item>configuration invalid</item>
+        <item>1. configuration invalid</item>
+    </array>
+    <array name="error_code_4128">
+        <item>"4128"</item>
+        <item>aborted</item>
+        <item>1. aborted</item>
+    </array>
+
+    <array name="load_file_error_code">
+        <item>@array/load_file_error_code_4097</item>
+        <item>@array/load_file_error_code_4098</item>
+        <item>@array/load_file_error_code_4099</item>
+        <item>@array/load_file_error_code_4100</item>
+        <item>@array/load_file_error_code_4101</item>
+        <item>@array/load_file_error_code_4102</item>
+        <item>@array/load_file_error_code_4103</item>
+        <item>@array/load_file_error_code_4104</item>
+        <item>@array/load_file_error_code_4105</item>
+        <item>@array/load_file_error_code_4106</item>
+        <item>@array/load_file_error_code_4107</item>
+        <item>@array/load_file_error_code_4108</item>
+        <item>@array/load_file_error_code_4109</item>
+        <item>@array/load_file_error_code_4110</item>
+        <item>@array/load_file_error_code_4111</item>
+        <item>@array/load_file_error_code_4112</item>
+        <item>@array/load_file_error_code_4113</item>
+        <item>@array/load_file_error_code_4114</item>
+        <item>@array/load_file_error_code_4115</item>
+        <item>@array/load_file_error_code_4116</item>
+    </array>
+
+    <array name="load_file_error_code_4097">
+        <item>"4097"</item>
+        <item>load image file failed</item>
+        <item>1. load image file failed</item>
+    </array>
+    <array name="load_file_error_code_4098">
+        <item>"4098"</item>
+        <item>Image file path invalid</item>
+        <item>1. Image file path invalid</item>
+    </array>
+    <array name="load_file_error_code_4099">
+        <item>"4099"</item>
+        <item>file extension invalid</item>
+        <item>1. file extension invalid</item>
+    </array>
+    <array name="load_file_error_code_4100">
+        <item>"4100"</item>
+        <item>Image file not exist</item>
+        <item>1.Image file not exist</item>
+    </array>
+    <array name="load_file_error_code_4101">
+        <item>"4101"</item>
+        <item>ic type conflict</item>
+        <item>1. image is not match with ic</item>
+    </array>
+    <array name="load_file_error_code_4102">
+        <item>"4102"</item>
+        <item>file type conflict</item>
+        <item>1. unsupport file type</item>
+    </array>
+    <array name="load_file_error_code_4103">
+        <item>"4103"</item>
+        <item>file type conflict</item>
+        <item>1. not support combine pack file</item>
+    </array>
+    <array name="load_file_error_code_4104">
+        <item>"4104"</item>
+        <item>low image version</item>
+        <item>1. low image version</item>
+    </array>
+    <array name="load_file_error_code_4105">
+        <item>"4105"</item>
+        <item>no combine bud item exist.</item>
+        <item>1. no combine bud item exist.</item>
+    </array>
+    <array name="load_file_error_code_4106">
+        <item>"4106"</item>
+        <item>sub combined file must be a pack file.</item>
+        <item>1. sub combined file must be a pack file.</item>
+    </array>
+    <array name="load_file_error_code_4107">
+        <item>"4107"</item>
+        <item>not support pack file</item>
+        <item>1. not support pack file</item>
+    </array>
+    <array name="load_file_error_code_4108">
+        <item>"4108"</item>
+        <item>not support single file.</item>
+        <item>1. not support single file.</item>
+    </array>
+    <array name="load_file_error_code_4109">
+        <item>"4109"</item>
+        <item>section size check failed.</item>
+        <item>1. ota header section size check failed</item>
+    </array>
+    <array name="load_file_error_code_4110">
+        <item>"4110"</item>
+        <item>empty pack</item>
+        <item>1. pack file has no available update file</item>
+    </array>
+    <array name="load_file_error_code_4111">
+        <item>"4111"</item>
+        <item>not support dual bank</item>
+        <item>1. pack file not support dual bank</item>
+    </array>
+    <array name="load_file_error_code_4112">
+        <item>"4112"</item>
+        <item>not support OTA Header bin</item>
+        <item>1.non dualbank OTA not support OTA Header bin</item>
+    </array>
+    <array name="load_file_error_code_4113">
+        <item>"4113"</item>
+        <item>low image version</item>
+        <item>1.there must be at least one data image version > active image version</item>
+    </array>
+    <array name="load_file_error_code_4114">
+        <item>"4114"</item>
+        <item>code image version low</item>
+        <item>1.all code image version must >= active image version</item>
+    </array>
+    <array name="load_file_error_code_4115">
+        <item>"4115"</item>
+        <item>incomplete file</item>
+        <item>1.incomplete file, miss OTA Header</item>
+    </array>
+    <array name="load_file_error_code_4116">
+        <item>"4116"</item>
+        <item>Not support MP pack bin</item>
+        <item>1.pack for mp can not be OTA</item>
+    </array>
+</resources>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017-2022. Realtek Semiconductor Corporation.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="rtk_dfu_title_settings">Settings</string>
+
+    <string name="rtk_dfu_text_average_speed">平均速率</string>
+    <string name="rtk_dfu_text_real_speed">实时速率</string>
+    <string name="rtk_dfu_text_speed_null">--</string>
+
+    <string name="rtk_dfu_pref_text_aes_key_line_1">00–03</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_2">04–07</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_3">08–11</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_4">12–15</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_5">16–19</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_6">20–23</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_7">24–27</string>
+    <string name="rtk_dfu_pref_text_aes_key_line_8">28–31</string>
+
+    <string name="rtk_toast_no_device">No Device</string>
+
+    <string name="rtk_dfu_text_test_parameters">Test Params</string>
+
+    <string name="pref_title_dfu_bond">Bond</string>
+    <string name="pref_title_dfu_workmode_prompt">Workmode Prompt</string>
+    <string name="pref_title_dfu_workmode_prompt_summary_on">Prompt when support multiple work mode</string>
+    <string name="pref_title_dfu_workmode_prompt_summary_off">Automatically, prefer to silent mode when silent mode is supported</string>
+    <string name="pref_title_dfu_upload_file_prompt">Upload File Prompt</string>
+    <string name="pref_title_dfu_upload_file_prompt_summary_off">Upload all of the content of the image file</string>
+    <string name="pref_title_dfu_upload_file_prompt_summary_on">Prompt when upload pack file which contains multiple sub files</string>
+    <string name="pref_title_dfu_bank_link">Banklink</string>
+    <string name="pref_title_dfu_bank_link_summary">Actively search and establish a LE connection after the upgrade is successful</string>
+    <string name="pref_title_dfu_image_file">Fixed Image File</string>
+    <string name="pref_title_dfu_image_file_summary_on">Automatically load file</string>
+    <string name="pref_title_dfu_image_file_summary_off">Switch to File Explorer</string>
+    <string name="pref_title_dfu_automatic_active">Automatic Active Image</string>
+    <string name="pref_title_dfu_automatic_active_summary_on">Automatically active image after the upgrade is successful</string>
+    <string name="pref_title_dfu_automatic_active_summary_off">Prompt to active image after the upgrade is successful</string>
+    <string name="pref_title_dfu_breakpoint_resume">Breakpoint Resume</string>
+    <string name="pref_title_dfu_breakpoint_resume_summary_on">Retransfer from the received image offset during the last connection</string>
+    <string name="pref_title_dfu_breakpoint_resume_summary_off">transfer from the start offset</string>
+    <string name="pref_title_dfu_throughput">Throughput</string>
+    <string name="pref_title_dfu_throughput_summary_on">Calculate throughput</string>
+    <string name="pref_title_dfu_throughput_summary_off">No throughtput out</string>
+    <string name="pref_title_auto_test">AutoTest</string>
+    <string name="pref_title_dfu_mtu_update">MTU Update</string>
+    <string name="pref_title_dfu_handover_timeout">Handover Timeout(s)</string>
+    <string name="pref_title_dfu_connection_parameters_latency">Close Latency</string>
+
+    <string name="pref_cat_title_dfu_data_transmission">Data Transmission</string>
+    <string name="pref_title_dfu_notification_timeout">Notification Timeout(millis)</string>
+
+    <string name="pref_cat_title_flow_control">Flow Control</string>
+    <string name="pref_title_dfu_flow_control">Flow Control</string>
+    <string name="pref_title_dfu_flow_control_interval">Flow Control(Unit:50ms)</string>
+
+    <string name="pref_title_dfu_config_chip_type_check">Chip Type Check</string>
+    <string name="pref_title_dfu_active_and_reset_ack">Active and Reset Command Ack</string>
+    <string name="pref_title_dfu_error_action_disconnect">Disconnect connection when ota failed</string>
+    <string name="pref_title_dfu_error_action_close_gatt">Close GATT</string>
+    <string name="pref_title_dfu_error_action_refresh_device">Refresh device service cache when disconnect</string>
+    <string name="pref_title_dfu_complete_action_remove_bond">Remove Bond</string>
+    <string name="pref_title_hid_auto_pair">HID Device</string>
+    <string name="pref_title_max_reconnect_times">Max Reconnect Times</string>
+    <string name="pref_title_max_buffer_check_size">Max Buffer Check Size</string>
+    <string name="pref_title_max_buffer_check_size_hint">16 * N(N>0)</string>
+    <string name="pref_title_general">General</string>
+    <string name="pref_title_dfu_success_hint">Sussess Hint</string>
+    <string name="pref_title_dfu_speed_control_level">Speed Control Level(No Buffer Check)</string>
+    <string-array name="dfu_speed_control_level_entries">
+        <item>Unlimited(Default)</item>
+        <item>Slow(x1)</item>
+        <item>Slow(x2)</item>
+        <item>Slow(x3)</item>
+        <item>Slow(x4)</item>
+        <item>Slow(x5)</item>
+        <item>Slow(x6)</item>
+    </string-array>
+    <string-array name="dfu_speed_control_level_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string name="pref_title_dfu_buffer_check_level">Speed Control Level(Buffer Check)</string>
+    <string-array name="dfu_buffer_check_level_entries">
+        <item>Automatic</item>
+        <item>Oringal(Default)</item>
+        <item>Round</item>
+        <item>Round Slow(x1)</item>
+        <item>Round Slow(x2)</item>
+        <item>Round Slow(x3)</item>
+    </string-array>
+    <string-array name="dfu_buffer_check_level_values">
+        <item>0</item>
+        <item>16</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+    </string-array>
+
+    <string name="rtk_dfu_support_title_active_bank">Active</string>
+    <string name="rtk_dfu_support_title_inactive_bank">Inactive</string>
+    <string name="rtk_dfu_support_title_device_genral_info">General</string>
+    <string name="rtk_dfu_support_title_device_debug_info">Debug</string>
+
+    <string name="pref_category_title_general">General</string>
+    <string name="pref_category_title_compatibility">Compatibility</string>
+    <string name="pref_category_title_connection">Connection</string>
+
+    <string name="pref_title_pair">Pair</string>
+    <string name="pref_summary_on_spp_connection_pair">Pair before connecting.\nThis is an experimentl feature and cannot be guaranteed to work on all devices</string>
+    <string name="pref_summary_off_spp_connection_pair">Do not care about pair status</string>
+
+    <string name="pref_category_title_connection_parameter">Connection Parameter</string>
+    <string name="pref_title_connection_parameter_max_interval">Max Interval</string>
+    <string name="pref_title_connection_parameter_min_interval">Min Interval</string>
+    <string name="pref_title_connection_parameter_latency">Latency</string>
+    <string name="pref_title_connection_parameter_timeout">timeout</string>
+
+    <string name="pref_title_dfu">DFU Configure</string>
+    <string name="pref_title_dfu_dev">DFU Configure Developer Options</string>
+    <string name="pref_title_dfu_config_gatt">GATT</string>
+    <string name="pref_title_dfu_config_spp">SPP</string>
+    <string name="pref_title_dfu_config_category_rws">RWS</string>
+    <string name="pref_category_title_normal_mode">Normal Mode</string>
+    <string name="pref_title_dfu_wait_disconnect_when_enter_ota_mode">Wait disconnect when enter ota mode</string>
+    <string name="pref_title_dfu_ota_service_uuid">OTA Service</string>
+    <string name="pref_title_dfu_aes_key">AES KEY</string>
+
+    <string name="pref_category_title_version">Image Version</string>
+    <string name="pref_title_dfu_version_check">Image Version Check</string>
+    <string name="pref_title_dfu_version_check_summary_on">Low Version Warning</string>
+    <string name="pref_title_dfu_version_check_summary_off">Do not check the firmware version, all files will be upgraded.</string>
+    <string name="pref_title_dfu_version_check_mode">Version Check Mode</string>
+    <string-array name="dfu_version_check_mode_entries">
+        <item>STRICT</item>
+        <item>LOOSE</item>
+    </string-array>
+    <string-array name="dfu_version_check_mode_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="pref_title_dfu_image_section_size_check">Image Section Size Check</string>
+    <string name="pref_title_dfu_image_section_size_check_summary_on">Warning when image size exceed the flash section size of images</string>
+    <string name="pref_title_dfu_image_section_size_check_summary_off">No Image Size and Section Size Check</string>
+    <string name="pref_title_dfu_active_and_reset_ack_summary_on">Report error if will not receive ACK after send active&amp;reset command</string>
+    <string name="pref_title_dfu_active_and_reset_ack_summary_off">Ignore error if will not receive ACK after send active&amp;reset command</string>
+
+    <string name="pref_category_title_battery">Battery</string>
+    <string name="pref_title_dfu_battery_check">Battery Check</string>
+    <string name="pref_title_dfu_battery_check_summary_on">Low Battery Warning</string>
+    <string name="pref_title_dfu_battery_check_summary_off">No Battery Check</string>
+    <string name="pref_title_dfu_battery_low_threshold">Low Battery Threshold</string>
+    <string-array name="dfu_battery_low_threshold_entries">
+        <item>30%</item>
+        <item>40%</item>
+        <item>50%</item>
+        <item>60%</item>
+    </string-array>
+    <string-array name="dfu_battery_low_threshold_values">
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+    <string name="pref_title_dfu_battery_check_format">Battery Level Format</string>
+    <string-array name="dfu_battery_check_format_entries">
+        <item>Percentage</item>
+        <item>Value</item>
+    </string-array>
+    <string-array name="dfu_battery_check_format_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="pref_title_dfu_file_suffix">File Suffix</string>
+    <string name="pref_title_log_level">Log Level</string>
+    <string name="rtk_dfu_support_text_ipv">IPV</string>
+
+    <string name="pref_title_dfu_usb_gatt">USB GATT</string>
+    <string name="pref_title_dfu_usb_gatt_endpoint">EndPoint</string>
+    <string-array name="dfu_usb_gatt_endpoint_entries">
+        <item>Control</item>
+        <item>Bulk</item>
+    </string-array>
+    <string-array name="dfu_usb_gatt_endpoint_values">
+        <item>0</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="rtk_dfu_tab_title_test_parsms">Test Params</string>
+
+
+    <string name="pref_title_preferred_phy">Perferred PHY</string>
+    <string-array name="dfu_ble_phy_entries">
+        <item>NORMAL(1M)</item>
+        <item>HIGH_SPEED(2M)</item>
+        <item>PHY_LONG_RANGE_X2(OPTION_S2)</item>
+        <item>PHY_LONG_RANGE_X4(OPTION_S8)</item>
+    </string-array>
+    <string-array name="dfu_ble_phy_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+
+    <string name="rtk_dfu_pref_title_aes_encrypt">AES encrypt</string>
+    <string name="rtk_dfu_pref_aes_encrypt_summary_on">SOC 强制打开加密传输功能，此时无论 configure tool 是否有配置</string>
+    <string name="rtk_dfu_pref_aes_encrypt_summary_off">SOC 强制关闭加密传输功能，此时无论 configure tool 是否有配置</string>
+    <string name="rtk_dfu_pref_title_stress_test">Stress test</string>
+    <string name="rtk_dfu_pref_stress_test_summary_on">SOC 收到该栏位置1后，每次reboot前都会去清除原先bank的OTA header bin，这样每次升级成功后都会运行新的image，而不用比较版本号。前提是升级的文件必须是合法，否则有变砖的风险。只可用于压力测试等场景。</string>
+    <string name="rtk_dfu_pref_stress_test_summary_off">NA</string>
+    <string name="rtk_dfu_pref_title_copy_fail">Copy Fail</string>
+    <string name="rtk_dfu_pref_copy_fail_summary_on">SOC 收到copy命令会故意回报失败一次</string>
+    <string name="rtk_dfu_pref_copy_fail_summary_off">NA</string>
+    <string name="rtk_dfu_pref_title_skip_fail">Skip Fail</string>
+    <string name="rtk_dfu_pref_skip_fail_summary_on">SOC skip流程validate时会故意回报一次失败。</string>
+    <string name="rtk_dfu_pref_skip_fail_summary_off">NA</string>
+    <string name="rtk_dfu_pref_title_buffer_check">Buffer check</string>
+    <string name="rtk_dfu_pref_buffer_check_summary_on">NA</string>
+    <string name="rtk_dfu_pref_buffer_check_summary_off">SOC 收到tool发送buffer check enable命令时会设置enable失败，便于测试buffer check不开启时OTA 流程。</string>
+    <string name="rtk_dfu_pref_category_title_dual_bank">Dual-bank</string>
+    <string name="rtk_dfu_pref_category_title_general">General</string>
+    <!--    The standard Android way to capitalize cancel is "Cancel" (tip: use '@android:string/cancel' instead)-->
+    <string name="rtkbt_ota_dfu_action_upload_cancel">@android:string/cancel</string>
+
+    <string name="rtkbt_ota_connect_device">Connect to the device: %1$s, please wait…</string>
+    <string name="rtk_toast_pressure_aborted">Aborted</string>
+    <string name="message_export_test_report_peocessing">Export test report …</string>
+
+    <string name="rtk_dfu_connect_device">Connect to the device: %s, please wait…</string>
+
+</resources>

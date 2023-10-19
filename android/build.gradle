@@ -1,0 +1,86 @@
+group 'com.skaiwalk.ble_ota'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: './aar_tools.gradle'
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.skaiwalk.ble_ota'
+    }
+
+    compileSdkVersion 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+
+    dependencies {
+        testImplementation 'org.jetbrains.kotlin:kotlin-test'
+        testImplementation 'org.mockito:mockito-core:5.0.0'
+
+//        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        implementation files('libs/rtk-dfu-3.5.14.jar')
+        implementation files('libs/rtk-core-1.3.5.jar')
+        implementation files('libs/rtk-bbpro-core-1.7.8.jar')
+
+        implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+        implementation 'androidx.appcompat:appcompat:1.5.1'
+        implementation 'androidx.preference:preference-ktx:1.2.1'
+        implementation "com.google.android.material:material:1.6.1"
+        implementation "androidx.cardview:cardview:1.0.0"
+        implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        implementation "androidx.viewpager2:viewpager2:1.0.0"
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+
+            testLogging {
+               events "passed", "skipped", "failed", "standardOut", "standardError"
+               outputs.upToDateWhen {false}
+               showStandardStreams = true
+            }
+        }
+    }
+}
+dependencies {
+    compileOnly fileTree(includes: ["*.aar"], dir:"libs")
+}

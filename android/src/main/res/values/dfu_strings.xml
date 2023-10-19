@@ -1,0 +1,215 @@
+<!--
+  ~ Copyright (c) 2017-2022. Realtek Semiconductor Corporation.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="rtk_dfu_action_reset">Reset</string>
+    <string name="rtk_dfu_action_disconnect">Disconnnect</string>
+    <string name="rtk_dfu_action_submit">Submit</string>
+
+    <string name="button_ok">OK</string>
+    <string name="rtkbt_ota_dfu_action_upload">Start</string>
+    <string name="button_stop">Stop</string>
+    <string name="rtk_ota_button_start_ota">Start OTA</string>
+    <string name="rtk_ota_button_stop_ota">Stop OTA</string>
+    <string name="rtk_ota_button_start_scan">Start Scan</string>
+    <string name="rtk_ota_button_stop_scan">Stop Scan</string>
+
+    <string name="rtk_dfu_file_size">%1$d bytes</string>
+    <string name="rtk_dfu_detail_file_info_sub_file_type">Type:</string>
+    <string name="rtk_dfu_detail_file_info_sub_file_version">Version:</string>
+    <string name="rtk_dfu_detail_file_info_sub_file_feature">Feature：</string>
+    <string name="rtk_dfu_detail_file_info_sub_file_size">Size:</string>
+    <string name="rtk_dfu_image_section_size">Section Size:</string>
+
+    <string name="rtk_dfu_text_on">ON</string>
+    <string name="rtk_dfu_text_off">OFF</string>
+
+
+    <string name="rtk_dfu_text_imageversion_bit_numer">Bit Number:</string>
+    <string name="rtk_dfu_text_imageversion_flash_layout_name">Flash Layout Name:</string>
+    <string name="rtk_dfu_text_imageinfo_feature">Feature:</string>
+    <string name="rtk_dfu_text_imageversion_indicator">Indicator:</string>
+    <string name="rtk_dfu_text_imageversion_version">Version:</string>
+
+    <string name="header_title_dfu_file_info">File Info</string>
+    <string name="rtk_dfu_title_device_info">Device Info</string>
+    <string name="rtk_dfu_title_file_content">File Content</string>
+    <string name="rtk_dfu_title_work_mode">Work Mode</string>
+    <string name="rtk_dfu_text_rws">RWS</string>
+    <string name="rtk_dfu_text_rws_mode">RWS Mode</string>
+    <string name="rtk_dfu_text_bud_role">Bud</string>
+    <string name="rtk_dfu_text_dualbank">DualBank</string>
+
+    <string name="rtk_dfu_text_file_path">File Path</string>
+    <string name="rtk_dfu_text_file_name">File Name</string>
+    <string name="rtk_dfu_text_file_size">File Size</string>
+    <string name="rtk_dfu_text_file_type">File Type</string>
+    <string name="rtk_dfu_text_target_device">Device</string>
+    <string name="rtk_dfu_text_file_upload_content">Upload Content</string>
+    <string name="rtk_dfu_text_file_image_size">Image Size</string>
+    <string name="rtk_dfu_text_file_image_version">Image Version</string>
+    <string name="rtk_dfu_text_file_status">Status</string>
+    <string name="rtk_dfu_text_file_ic_type">IC</string>
+
+
+    <string name="rtk_dfu_text_vendor_product_id">Vendor/Product ID</string>
+
+    <string name="rtk_dfu_text_target_name">Device Name</string>
+    <string name="rtk_dfu_text_target_bd_address">Bluetooth Address</string>
+    <string name="rtk_dfu_text_battery_level">Battery Level</string>
+    <string name="rtk_dfu_text_target_device_mac">Device MAC</string>
+    <string name="rtk_dfu_text_target_link_key">Link Key</string>
+    <string name="rtk_dfu_text_target_old_fw_version">Target APP Version</string>
+    <string name="rtk_dfu_text_target_old_patch_version">Target Patch Version</string>
+    <string name="rtk_dfu_text_target_patch_extend_version">Target Patch Extend Version</string>
+    <string name="rtk_dfu_text_target_ic_type">Ic Type</string>
+    <string name="rtk_dfu_text_target_protocol_type">Protocol Type</string>
+    <string name="rtk_dfu_text_target_update_mechanism">Update Mechanism</string>
+    <string name="rtk_dfu_text_target_bank">Current App Bank:</string>
+    <string name="rtk_dfu_text_target_pactch_bank">Current Patch Bank</string>
+    <string name="rtk_dfu_text_target_Aes_Mode">AES Encript</string>
+    <string name="rtk_dfu_text_target_buffer_check_mode">Buffer Check</string>
+    <string name="rtk_dfu_text_target_max_buffer_size">Max Buffer Check Size</string>
+    <string name="rtk_dfu_text_target_appData0_version">Current App Data 0 Version</string>
+    <string name="rtk_dfu_text_target_appData1_version">Current App Data 1 Version</string>
+    <string name="rtk_dfu_text_target_appData2_version">Current App Data 2 Version</string>
+    <string name="rtk_dfu_text_target_appData3_version">Current App Data 3 Version</string>
+    <string name="rtk_dfu_file_status_ok">OK</string>
+    <string name="rtk_dfu_file_status_no_file">File not loaded</string>
+    <string name="rtk_dfu_file_version_text_detail">Detail</string>
+
+    <string name="rtk_dfu_work_mode_normal">Normal Mode</string>
+    <string name="rtk_dfu_work_mode_extension">Extension Mode</string>
+    <string name="rtk_dfu_work_mode_slient">Silent Mode</string>
+    <string name="rtk_dfu_work_mode_silent_no_temp">No Temp</string>
+    <string name="rtk_dfu_work_mode_silent_temp">Temp</string>
+    <string name="rtk_dfu_work_mode_silent_force_temp">Force Temp</string>
+    <string name="rtk_dfu_work_mode_silent_dualbank_force_copy_data_image">Force Copy Data Image</string>
+    <string name="rtk_dfu_work_mode_silent_rws">RWS</string>
+    <string name="rtk_dfu_work_mode_normal_vp">Normal VP</string>
+    <string name="rtk_dfu_work_mode_silent_vp">Silent VP</string>
+    <string name="rtk_dfu_work_mode_vp_id">VP ID</string>
+
+    <string name="rtk_dfu_work_mode_unknown">Unknown</string>
+
+    <string name="rtk_dfu_file_type_single">Single</string>
+    <string name="rtk_dfu_file_type_pack">Merge</string>
+    <string name="rtk_dfu_file_content_type_full">Full</string>
+    <string name="rtk_dfu_file_type_merge_patch">Merge Patch</string>
+    <string name="rtk_dfu_file_type_merge_app">Merge App</string>
+    <string name="rtk_dfu_file_type_merge_user_data">Merge User data</string>
+    <string name="rtk_dfu_file_type_merge_patch_extension">Merge Patch Extension</string>
+    <string name="rtk_dfu_file_type_merge_config_file">Merge Config file</string>
+    <string name="rtk_dfu_file_type_merge_external_flash_image">Merge External Flash image</string>
+    <string name="rtk_dfu_file_type_unknown">Unknown</string>
+
+
+    <string name="rtk_dfu_unknown_device">unknown device</string>
+    <string name="rtk_dfu_scanner_title">Select the Device You Want to Update:</string>
+    <string name="rtk_dfu_scanner_empty">No device found</string>
+    <string name="rtk_dfu_scanner_action_scan">Scan</string>
+    <string name="rtk_dfu_scanner_action_cancel">Cancel</string>
+    <string name="rtk_dfu_scanner_subtitle_bonded">BONDED DEVICES:</string>
+    <string name="rtk_dfu_scanner_subtitle_not_bonded">AVAILABLE DEVICES:</string>
+
+
+    <string name="rtk_dfu_progress_state_origin">origin</string>
+
+    <string name="rtk_ota_state_known">Unknown</string>
+    <string name="rtk_ota_state_oritin">origin</string>
+    <string name="rtk_ota_state_bind_service">bind service …</string>
+    <string name="rtk_ota_state_init_ok">initialized</string>
+    <string name="rtk_ota_state_preparing">preparing …</string>
+    <string name="rtk_ota_state_connecting">connecting …</string>
+    <string name="rtk_ota_state_pair_processing">pairing …</string>
+    <string name="rtk_ota_state_process_pair_request">pair request …</string>
+    <string name="rtk_ota_state_pending_discover_service">pending discover service …</string>
+    <string name="rtk_ota_state_discover_service">discover service …</string>
+    <string name="rtk_ota_state_set_preferred_phy">set preferred phy …</string>
+    <string name="rtk_ota_state_read_device_info">read device info …</string>
+    <string name="rtk_ota_state_read_protocol_type">read protocol info …</string>
+    <string name="rtk_ota_state_read_image_info">read image info …</string>
+    <string name="rtk_ota_state_read_battery_info">read battery info …</string>
+    <string name="rtk_ota_state_prepared">connected.</string>
+    <string name="rtk_ota_state_ota_processing">ota processing …</string>
+
+
+    <string name="rtk_dfu_state_known">Unknown</string>
+    <string name="rtk_dfu_state_origin">origin</string>
+    <string name="rtk_dfu_state_initialize">initialize &#8230;</string>
+    <string name="rtk_dfu_state_start">prepare to start &#8230;</string>
+    <string name="rtk_dfu_state_remote_enter_ota">enter ota mode &#8230;</string>
+    <string name="rtk_dfu_state_find_ota_remote">find ota device &#8230;</string>
+    <string name="rtk_dfu_state_connect_ota_remote">connect ota device &#8230;</string>
+    <string name="rtk_dfu_state_prepare_dfu_processing">prepare dfu environment &#8230;</string>
+    <string name="rtk_dfu_state_start_ota_processing">ota processing &#8230;</string>
+    <string name="rtk_dfu_state_ota_send_file">sending file %1$d/%2$d &#8230;</string>
+    <string name="rtk_dfu_state_upgrade_success">upgrade success</string>
+    <string name="rtk_dfu_state_pending_active_image">pending active image &#8230;</string>
+    <string name="rtk_dfu_state_hand_over_processing">hand over processing &#8230;</string>
+    <string name="rtk_dfu_state_start_active_image">active image processing &#8230;</string>
+    <string name="rtk_dfu_state_image_active_success">image active success</string>
+    <string name="rtk_dfu_state_abort_processing">waiting to abort …</string>
+    <string name="rtk_dfu_state_error_processing">error processing …</string>
+    <string name="rtk_dfu_state_aborted">Aborted</string>
+    <string name="rtk_dfu_state_scan_secondary_bud">scan secondary bud …</string>
+
+    <string name="rtk_dfu_toast_error_message">Error Code: %1$s\nTitle: %2$s\nDetail: %3$s</string>
+    <string name="rtk_dfu_toast_connection_error_message">Something error in get remote info,\n%s</string>
+    <string name="rtk_dfu_toast_ota_is_processing">OTA is processing</string>
+    <string name="rtk_dfu_toast_ota_is_processing_exist">OTA is processing, are you sure to exist?</string>
+    <string name="rtk_dfu_toast_operation_failed">Operation failed</string>
+    <string name="rtk_dfu_toast_no_device">No Device</string>
+    <string name="rtk_dfu_toast_no_ble">Device doesn\'t support BLE</string>
+    <string name="rtk_dfu_toast_bt_enabled">BT enabled</string>
+    <string name="rtk_dfu_toast_bt_not_enabled">BT not enabled</string>
+    <string name="rtk_dfu_toast_connect_device">Connect to the device: %1$s, please wait…</string>
+
+    <string name="rtk_dfu_bin_indicator_00">image is not existed</string>
+    <string name="rtk_dfu_bin_indicator_01">image is existed in bank 0, ota should update image for bank 1</string>
+    <string name="rtk_dfu_bin_indicator_10">image is existed in bank 1, ota should update image for bank 0</string>
+    <string name="rtk_dfu_bin_indicator_11">image is standalone, ota should update for standalone</string>
+    <string name="rtk_dfu_bin_indicator_undefined">Undefined</string>
+
+    <string name="rtk_subfile_type_undefined">Undefined</string>
+
+    <string name="rtk_dfu_update_mechanism_one_by_one">One By One</string>
+    <string name="rtk_dfu_update_mechanism_all_in_one">All In One</string>
+    <string name="rtk_dfu_update_mechanism_all_in_one_with_buffer">All In One With Buffer</string>
+
+
+    <string name="rtk_dfu_connection_state_no_device">NO DEVICE</string>
+    <string name="rtk_dfu_connection_state_connecting">CONNECTING…</string>
+    <string name="rtk_dfu_connection_state_disconnected">DISCONNECTED</string>
+    <string name="rtk_dfu_connection_state_connected">CONNECTED</string>
+    <string name="rtk_dfu_connection_state_discovering_services">DISCOVERING SERVICES…</string>
+    <string name="rtk_dfu_connection_state_request_mtu">REQUESTING MTU…</string>
+    <string name="rtk_dfu_connection_state_set_perfered_phy">CONFIGURING PHY…</string>
+    <string name="rtk_dfu_connection_state_enable_cccd">ENABLE CCCD …</string>
+    <string name="rtk_dfu_connection_state_not_supported">NOT SUPPORTED</string>
+    <string name="rtk_dfu_connection_state_disconnecting">DISCONNECTING…</string>
+
+    <string name="rtk_dfu_no_available_upload_file">No Available file</string>
+
+    <string name="rtk_dfu_bininfo_multi_pack_not_supported">MultiPack File not supported</string>
+    <string name="rtk_dfu_bininfo_single_not_supported">Single File not supported</string>
+    <string name="rtk_dfu_bininfo_multi_bud_pack_miss">bud pack miss</string>
+    <string name="rtk_dfu_bininfo_ic_type_conflict">IC Type conflict</string>
+    <string name="rtk_dfu_bininfo_file_incomplete">File incomplete</string>
+    <string name="rtk_dfu_bininfo_non_config_file_version_low">code image version low</string>
+    <string name="rtk_dfu_bininfo_config_file_version_low">data image version low</string>
+
+</resources>
