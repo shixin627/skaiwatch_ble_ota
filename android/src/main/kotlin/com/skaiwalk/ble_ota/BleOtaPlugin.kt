@@ -1,5 +1,6 @@
 package com.skaiwalk.ble_ota
 
+import android.bluetooth.BluetoothManager
 import android.content.Context
 import com.realsil.sdk.core.RtkConfigure
 import com.realsil.sdk.core.RtkCore
@@ -14,6 +15,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+
 
 /** BleOtaPlugin */
 class BleOtaPlugin : FlutterPlugin, MethodCallHandler {
@@ -44,21 +46,22 @@ class BleOtaPlugin : FlutterPlugin, MethodCallHandler {
             "getPlatformVersion" -> {
                 result.success("Android ${android.os.Build.VERSION.RELEASE}")
             }
+
+            "createBond" -> {
+                var address = call.argument<String>("address")
+                var byteArray = parseAddressToByteArray(address!!)
+                createBondWithAddress(byteArray)
+            }
+
             "setFile" -> {
                 var name = call.argument<String>("name")
                 mGattDfuModule!!.setFileName(context, name!!)
             }
-            "createBond" -> {
-                var address = call.argument<String>("address")
-                var byteArray = parseAddressToByteArray(address!!)
-                createBond(byteArray)
-            }
+
             "startDfuProcess" -> {
-                if (mGattDfuModule!!.mBondedDevice != null) {
-                    startDfuProcess()
-                } else {
-                    initDfuProcess()
-                }
+                var address = call.argument<String>("address")
+                var name = call.argument<String>("fileName")
+                startDfuProcess(address!!, name!!)
                 result.success(isRtkDfuInitialized)
             }
 
@@ -111,11 +114,6 @@ class BleOtaPlugin : FlutterPlugin, MethodCallHandler {
         }
     }
 
-    private fun initDfuProcess() {
-        var address = "16:3a:7d:c4:ba:69"
-        var byteArray = parseAddressToByteArray(address!!)
-        createBond(byteArray)
-    }
     private fun parseAddressToByteArray(address: String): ByteArray {
         // split address with ':' to array
         var addressArray = address!!.split(":")
@@ -128,22 +126,23 @@ class BleOtaPlugin : FlutterPlugin, MethodCallHandler {
         }
         return byteArray
     }
-    private fun createBond(byteArray: ByteArray) {
-        var paired =  mRtkBluetoothManager!!.pair(byteArray)
-        if (paired) {
-            ZLogger.d(true, "[createBond]paired")
-        } else {
-            ZLogger.d(true, "[createBond]not paired")
-        }
+
+    private fun createBondWithAddress(byteArray: ByteArray) {
+        mRtkBluetoothManager!!.createBond(byteArray)
     }
 
-    private fun startDfuProcess() {
+    private fun startDfuProcess(address: String, name: String) {
+        var byteArray = parseAddressToByteArray(address)
+        byteArray.reverse()
+        val bluetoothManager =
+            context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+        mGattDfuModule!!.mTargetDevice = bluetoothManager.adapter.getRemoteDevice(byteArray)
+        ZLogger.d(true, "[startDfuProcess]get remote device: ${mGattDfuModule!!.mTargetDevice}")
+        mGattDfuModule!!.connectRemoteDevice(mGattDfuModule!!.mTargetDevice!!, false)
         if (mGattDfuModule!!.deviceConnected) {
+            mGattDfuModule!!.setFileName(context, name)
             ZLogger.d(true, "[startDfuProcess]checkFileContentAndStartOTA")
             mGattDfuModule!!.checkFileContentAndStartOTA()
-        } else {
-            ZLogger.d(true, "[startDfuProcess]connectRemoteDevice")
-            mGattDfuModule!!.connectRemoteDevice(mGattDfuModule!!.mBondedDevice, false)
         }
     }
 

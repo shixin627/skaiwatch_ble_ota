@@ -1,5 +1,5 @@
 
-import 'package:ble_ota/ota_file.dart';
+import 'package:ble_ota/ota_model.dart';
 
 import 'ble_ota_platform_interface.dart';
 
@@ -8,11 +8,15 @@ class BleOta {
     return BleOtaPlatform.instance.getPlatformVersion();
   }
 
-  Future<void> setFile(OtaFile otaFile) {
-    return BleOtaPlatform.instance.setFile(otaFile);
+  Future<void> createBond(String address) {
+    return BleOtaPlatform.instance.createBond(address);
   }
 
-  Future<bool> startDfuProcess() {
-    return BleOtaPlatform.instance.startDfuProcess();
+  Future<void> setFile(OtaModel model) {
+    return BleOtaPlatform.instance.setFile(model);
+  }
+
+  Future<bool> startDfuProcess(OtaModel model) {
+    return BleOtaPlatform.instance.startDfuProcess(model);
   }
 }

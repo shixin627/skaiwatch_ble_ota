@@ -211,7 +211,7 @@ class GattDfuModule : BaseBluetoothDfuModule<GattDfuAdapter>() {
     }
 
     fun setFileName(activityContext: Context, fileName: String) {
-        var packageName = context.packageName
+        var packageName = activityContext.packageName
         mFilePath = "/data/user/0/${packageName}/cache/${fileName}"
         ZLogger.v("[setFileName]mFilePath:$mFilePath")
     }
@@ -278,6 +278,8 @@ class GattDfuModule : BaseBluetoothDfuModule<GattDfuAdapter>() {
         }
         val ret = dfuAdapter.connectDevice(connectParamsBuilder.build())
         if (!ret) {
+            deviceConnected = false
+            ZLogger.v("connectDevice failed")
         } else {
             deviceConnected = true
             ZLogger.v("connectDevice success")

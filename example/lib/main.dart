@@ -1,19 +1,20 @@
-import 'package:ble_ota/ota_file.dart';
+import 'package:ble_ota/ota_model.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:ble_ota/ble_ota.dart';
-import 'dart:async';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
+
+const String deviceAddress = "16:3a:7d:c4:ba:69";
+const String otaFileName = 'ImgPacketFile-d40f416a178a33658b3aced19feb1637.bin';
+String otaFileAssetPath = 'asset/bin/$otaFileName';
 
 void main() {
   runApp(const MyApp());
 }
-String otaFileName = 'ImgPacketFile-d40f416a178a33658b3aced19feb1637.bin';
-String otaFileAssetPath = 'asset/bin/$otaFileName';
+
 Future<void> copyFileFromAssetsToCache(String assetPath) async {
   final ByteData data = await rootBundle.load(assetPath);
   final List<int> bytes = data.buffer.asUint8List();
@@ -53,8 +54,8 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await _bleOtaPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      platformVersion = await _bleOtaPlugin.getPlatformVersion() ??
+          'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -68,15 +69,21 @@ class _MyAppState extends State<MyApp> {
       _platformVersion = platformVersion;
     });
   }
+
   bool _isDfuInProgress = false;
 
-  Future<void> setFile(String fileName) async {
-    OtaFile otaFile = OtaFile(name: fileName);
-    await _bleOtaPlugin.setFile(otaFile);
+  Future<void> createBond(String deviceAddress) async {
+    await _bleOtaPlugin.createBond(deviceAddress);
   }
 
-  Future<void> startDfuProcess() async {
-    _isDfuInProgress = await _bleOtaPlugin.startDfuProcess();
+  Future<void> setFile(String fileName) async {
+    OtaModel model = OtaModel(fileName: fileName);
+    await _bleOtaPlugin.setFile(model);
+  }
+
+  Future<void> startDfuProcess(String deviceAddress, String fileName) async {
+    OtaModel model = OtaModel(address: deviceAddress, fileName: fileName);
+    _isDfuInProgress = await _bleOtaPlugin.startDfuProcess(model);
     if (_isDfuInProgress) {
       print('DFU process started successfully');
     } else {
@@ -98,6 +105,10 @@ class _MyAppState extends State<MyApp> {
             children: [
               Text('Running on: $_platformVersion\n'),
               ElevatedButton(
+                onPressed: () => createBond(deviceAddress),
+                child: const Text('Create Bond'),
+              ),
+              ElevatedButton(
                 onPressed: () => copyFileFromAssetsToCache(otaFileAssetPath),
                 child: const Text('Query File'),
               ),
@@ -107,7 +118,7 @@ class _MyAppState extends State<MyApp> {
               ),
               if (_isDfuInProgress) const Text('DFU process in progress'),
               ElevatedButton(
-                onPressed: startDfuProcess,
+                onPressed: () => startDfuProcess(deviceAddress, otaFileName),
                 child: const Text('Start DFU process'),
               )
             ],

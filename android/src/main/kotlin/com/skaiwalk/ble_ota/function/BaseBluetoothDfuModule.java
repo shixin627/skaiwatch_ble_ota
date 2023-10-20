@@ -18,19 +18,14 @@ package com.skaiwalk.ble_ota.function;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.res.Configuration;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.skaiwalk.ble_ota.R;
+import com.realsil.sdk.dfu.model.ConnectionParameters;
 import com.skaiwalk.ble_ota.settings.AppSettingsHelper;
 import com.realsil.sdk.core.bluetooth.GlobalGatt;
 import com.realsil.sdk.core.bluetooth.RtkBluetoothManager;
@@ -46,14 +41,11 @@ import com.realsil.sdk.dfu.image.BinIndicator;
 import com.realsil.sdk.dfu.model.DfuConfig;
 import com.realsil.sdk.dfu.model.FileTypeInfo;
 import com.realsil.sdk.dfu.model.OtaDeviceInfo;
-import com.realsil.sdk.dfu.model.OtaModeInfo;
 import com.skaiwalk.ble_ota.IOtaListener;
 import com.skaiwalk.ble_ota.settings.SettingsHelper;
 import com.realsil.sdk.dfu.utils.BluetoothDfuAdapter;
-import com.realtek.sdk.support.debugger.DebuggerSettings;
 import com.realtek.sdk.support.debugger.WriteLog;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -133,7 +125,7 @@ public abstract class BaseBluetoothDfuModule<T extends BluetoothDfuAdapter> exte
     protected int mProcessState;
 
     protected BluetoothDevice mSelectedDevice;
-    public BluetoothDevice mBondedDevice;
+    public BluetoothDevice mTargetDevice;
 
     protected Object mScanLock = new Object();
 
@@ -218,13 +210,15 @@ public abstract class BaseBluetoothDfuModule<T extends BluetoothDfuAdapter> exte
                 if (!isOtaProcessing()) {
                     notifyBankLink();
                 }
+            } else {
+                ZLogger.v("onAclConnectionStateChanged, device is null or not equal");
             }
         }
         @Override
         public void onBondStateChanged(BluetoothDevice var1, int var2) {
             super.onBondStateChanged(var1, var2);
             ZLogger.v("onBondStateChanged: " + var1 + ", " + var2);
-            mBondedDevice = var1;
+            mTargetDevice = var1;
         }
         @Override
         public void onBluetoothStateChanged(int i) {
@@ -361,6 +355,8 @@ public abstract class BaseBluetoothDfuModule<T extends BluetoothDfuAdapter> exte
         getDfuConfig().setMtuUpdateEnabled(SettingsHelper.Companion.getInstance().isDfuMtuUpdateEnabled());
         getDfuConfig().setWaitActiveCmdAckEnabled(SettingsHelper.Companion.getInstance().isDfuActiveAndResetAckEnabled());
 
+//        ConnectionParameters connectionParameters = (new ConnectionParameters.Builder()).minInterval(6).maxInterval(6).latency(0).timeout(500).build();
+//        getDfuConfig().setConnectionParameters(connectionParameters);
         // only used for bee1
         getDfuConfig().setConParamUpdateLatencyEnabled(SettingsHelper.Companion.getInstance().isDfuConnectionParameterLatencyEnabled());
         getDfuConfig().setLatencyTimeout(SettingsHelper.Companion.getInstance().getDfuConnectionParameterLatencyTimeout());
@@ -425,9 +421,8 @@ public abstract class BaseBluetoothDfuModule<T extends BluetoothDfuAdapter> exte
 
         // Mandatory
         getDfuConfig().setAddress(mSelectedDevice.getAddress());
-
-        configureDevOps();
         getDfuConfig().setFilePath(mFilePath);
+        configureDevOps();
         ZLogger.v("startOtaProcess DfuConfig: " + getDfuConfig().toString());
 
         boolean ret = getDfuAdapter().startOtaProcedure(getDfuConfig(), mOtaDeviceInfo, true);

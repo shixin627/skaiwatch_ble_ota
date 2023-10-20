@@ -1,3 +1,4 @@
+import 'package:ble_ota/ota_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ble_ota/ble_ota.dart';
 import 'package:ble_ota/ble_ota_platform_interface.dart';
@@ -10,6 +11,24 @@ class MockBleOtaPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<void> createBond(String address) {
+    // TODO: implement createBond
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setFile(OtaModel model) {
+    // TODO: implement setFile
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> startDfuProcess(OtaModel model) {
+    // TODO: implement startDfuProcess
+    throw UnimplementedError();
+  }
 }
 
 void main() {
